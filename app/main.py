@@ -1,10 +1,13 @@
 from fastapi import FastAPI
 from app.api.health import router as health_router
+from app.core.config import Settings, settings as default_settings
 
 
-def create_app() -> FastAPI:
-    app = FastAPI(title="RAG System")
+def create_app(settings: Settings = default_settings) -> FastAPI:
+    app = FastAPI(title=settings.app_name)
+
     app.include_router(health_router)
+    app.state.settings = settings
     return app
 
 
