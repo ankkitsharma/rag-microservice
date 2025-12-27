@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from app.api.health import router as health_router
 from app.core.config import Settings, settings as default_settings
 from app.core.logging import setup_logging
+from app.api.health import router as health_router
 from app.api.upload import router as upload_router
 
 
