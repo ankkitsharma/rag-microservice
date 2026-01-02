@@ -4,7 +4,7 @@ from pathlib import Path
 
 router = APIRouter()
 
-MAX_FILE_SIZE = 2 * 1024 * 1024
+MAX_FILE_SIZE = 2 * 1024 * 1024  # 2MB
 ALLOWED_TYPES = {"text/plain", "text/markdown"}
 UPLOAD_DIR = Path("app/storage")
 
